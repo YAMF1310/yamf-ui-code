@@ -1,5 +1,6 @@
 <template>
-  <button class="yamf-button" :class="classes">
+  <button class="yamf-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="yamf-loadingIndicator"></span>
     <slot />
   </button>
 </template>
@@ -19,6 +20,14 @@ export default {
     level: {
       type: String,
       default: "normal",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
+      type: Boolean,
+      default: false,
     },
   },
   setup(props) {
@@ -42,6 +51,8 @@ $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
 $red: red;
+$grey: grey;
+$bule: blue;
 .yamf-button {
   box-sizing: border-box;
   height: $h;
@@ -145,6 +156,41 @@ $red: red;
         color: darken($red, 10%);
       }
     }
+  }
+  &.yamf-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.yamf-theme-link,
+  &.yamf-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+    }
+  }
+  > .yamf-loadingIndicator {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px;
+    border-color: $bule $bule $bule transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: yamf-spin 1s infinite linear;
+  }
+}
+@keyframes yamf-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 </style>
