@@ -52,7 +52,6 @@ $blue: #40a9ff;
 $radius: 4px;
 $red: red;
 $grey: grey;
-$bule: blue;
 .yamf-button {
   box-sizing: border-box;
   height: $h;
@@ -174,12 +173,12 @@ $bule: blue;
     }
   }
   > .yamf-loadingIndicator {
-    width: 10px;
-    height: 10px;
+    width: 14px;
+    height: 14px;
     display: inline-block;
     margin-right: 4px;
     border-radius: 8px;
-    border-color: $bule $bule $bule transparent;
+    border-color: $blue $blue $blue transparent;
     border-style: solid;
     border-width: 2px;
     animation: yamf-spin 1s infinite linear;
