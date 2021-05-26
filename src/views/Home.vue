@@ -6,7 +6,7 @@
         <h1>YAMF UI</h1>
         <h2>尝试做一个UI框架</h2>
         <p class="actions">
-          <a href="">Github</a>
+          <a href="https://www.baidu.com">Github</a>
           <router-link to="/doc/intro">开始</router-link>
         </p>
       </div>
